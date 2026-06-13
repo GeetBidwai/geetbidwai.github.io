@@ -7,6 +7,207 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* ── ABOUT: profile photo ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .about-photo-col {
+      display: flex;
+      justify-content: center;
+    }
+    .about-photo-wrap {
+      width: 280px;
+      height: 320px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      flex-shrink: 0;
+    }
+    .about-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* ── SKILLS: icon grid ── */
+    .skills-icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: flex-start;
+    }
+    .skill-icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      min-width: 90px;
+      transition: all var(--transition);
+    }
+    .skill-icon-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+    .skill-icon-card img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .skill-icon-card span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .skills-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+    .skills-section-header .section-title { margin-bottom: 0; }
+
+    /* ── PROJECTS: with preview thumbnails + view all button ── */
+    .projects-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+    .projects-header .section-title { margin-bottom: 0; }
+    .project-card__thumb {
+      width: 100%;
+      height: 160px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      margin-bottom: 0.5rem;
+    }
+    .project-card__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-card__thumb img {
+      transform: scale(1.04);
+    }
+    .project-card__thumb--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 2rem;
+    }
+
+    /* ── PHOTOGRAPHY: 4-col grid ── */
+    .photo-grid-new {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .photo-grid-new .gallery-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      transition: transform 0.4s ease;
+    }
+    .photo-grid-new .gallery-img:hover {
+      transform: scale(1.03);
+    }
+    .photography-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+    .photography-header .section-title { margin-bottom: 0; }
+    .photography-header .section-sub { margin-bottom: 0; margin-top: 0.25rem; }
+
+    /* ── CONTACT: simplified, no form, 3 horizontal cards ── */
+    .contact-info-row {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .contact-info-card {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.4rem;
+      transition: all var(--transition);
+      flex: 1;
+      min-width: 200px;
+    }
+    .contact-info-card:hover {
+      border-color: var(--accent-cyan);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-glow);
+    }
+    .contact-info-card__icon {
+      width: 38px; height: 38px;
+      border-radius: var(--radius-sm);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .contact-info-card__text span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .contact-info-card__text p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* CONTACT section title tweak */
+    .contact .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+
+    /* ── Responsive overrides ── */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photo-col { order: -1; }
+      .about-photo-wrap { width: 220px; height: 260px; }
+      .photo-grid-new { grid-template-columns: repeat(2, 1fr); }
+      .skills-icon-grid { justify-content: center; }
+      .photography-header, .projects-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+    @media (max-width: 560px) {
+      .photo-grid-new { grid-template-columns: 1fr 1fr; }
+      .contact-info-row { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
 
@@ -48,25 +249,25 @@
           <span class="name-first">Geet</span>
           <span class="name-last">Bidwai</span>
         </h1>
-        <p class="hero-role">MSc Statistics Graduate <span class="role-sep">×</span> Aspiring Data Analyst</p>
+        <p class="hero-role">Data Analyst <span class="role-sep">•</span> Photographer</p>
         <p class="hero-tagline">
-        Turning Data Into Decisions.
-        <br>
-        Capturing Stories Through A Lens.
+          Turning Data Into Decisions.<br>
+          Capturing Stories Through A Lens.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn--primary">View My Work</a>
+          <a href="#projects" class="btn btn--primary">View My Work <i class="fas fa-arrow-right"></i></a>
           <a href="#contact" class="btn btn--ghost">Let's Talk</a>
         </div>
         <div class="hero-socials">
           <a href="#" aria-label="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
           <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Photography" class="social-icon"><i class="fas fa-camera"></i></a>
+          <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
     <a href="#about" class="scroll-hint" aria-label="Scroll down">
       <span class="scroll-line"></span>
+      <span style="font-size:0.75rem; margin-top:2px;">Scroll Down</span>
       <i class="fas fa-chevron-down"></i>
     </a>
   </section>
@@ -77,30 +278,46 @@
       <div class="section-label">01 — About Me</div>
       <h2 class="section-title">The story so far</h2>
       <div class="about-grid">
+        <!-- Bio -->
         <div class="about-bio reveal">
           <p>I'm an <strong>MSc Statistics graduate</strong> passionate about transforming raw data into meaningful business insights. My interests span Data Analytics, Business Intelligence, Statistical Modeling, and Data Visualization.</p>
           <p>I enjoy working with <strong>SQL, Python, R, Excel, and Power BI</strong> to solve real-world problems through data-driven decisions — finding patterns others miss and communicating them clearly.</p>
           <p>When I'm not wrangling datasets, I'm out capturing the world through a lens.</p>
           <a href="assets/resume.pdf" class="btn btn--outline" target="_blank">
-            <i class="fas fa-file-alt"></i> Download Resume
+            <i class="fas fa-download"></i> Download Resume
           </a>
         </div>
+
+        <!-- Profile Photo -->
+        <div class="about-photo-col reveal">
+          <div class="about-photo-wrap">
+            <!-- Replace with your actual profile image path -->
+            <img src="images/profile.jpeg" alt="Geet Bidwai"
+              onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-2);color:var(--text-muted);font-size:4rem;\'><i class=\'fas fa-user\'></i></div>'" />
+          </div>
+        </div>
+
+        <!-- Stats -->
         <div class="about-stats reveal">
           <div class="stat-card">
+            <div style="font-size:2rem; color:var(--accent-cyan); margin-bottom:0.25rem;"><i class="fas fa-briefcase"></i></div>
             <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
             <span class="stat-lbl">Internships</span>
           </div>
           <div class="stat-card">
+            <div style="font-size:2rem; color:var(--accent-cyan); margin-bottom:0.25rem;"><i class="fas fa-chart-line"></i></div>
             <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
             <span class="stat-lbl">Projects</span>
           </div>
           <div class="stat-card">
+            <div style="font-size:2rem; color:var(--accent-cyan); margin-bottom:0.25rem;"><i class="fas fa-trophy"></i></div>
             <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
-            <span class="stat-lbl">Languages</span>
+            <span class="stat-lbl">Certifications</span>
           </div>
           <div class="stat-card stat-card--accent">
-            <span class="stat-num stat-text">MSc</span>
-            <span class="stat-lbl">Statistics</span>
+            <div style="font-size:2rem; color:var(--accent-cyan); margin-bottom:0.25rem;"><i class="fas fa-camera"></i></div>
+            <span class="stat-num" data-target="100">0</span><span class="stat-plus">+</span>
+            <span class="stat-lbl">Photos Captured</span>
           </div>
         </div>
       </div>
@@ -111,54 +328,73 @@
   <section class="section skills" id="skills">
     <div class="container">
       <div class="section-label">02 — Skills</div>
-      <h2 class="section-title">Tools of the trade</h2>
-      <div class="skills-grid">
+      <div class="skills-section-header">
+        <h2 class="section-title">Tools &amp; Technologies</h2>
+      </div>
+      <div class="skills-icon-grid reveal">
 
-        <div class="skill-category reveal">
-          <div class="skill-category__icon"><i class="fas fa-database"></i></div>
-          <h3>Data & Analytics</h3>
-          <div class="skill-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-          </div>
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"
+            onerror="this.outerHTML='<i class=\'fas fa-database\' style=\'font-size:2.2rem;color:var(--accent-cyan)\'></i>'"/>
+          <span>SQL</span>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-category__icon"><i class="fas fa-chart-bar"></i></div>
-          <h3>Visualization</h3>
-          <div class="skill-tags">
-            <span class="tag">Power BI</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Seaborn</span>
-            <span class="tag">Excel</span>
-          </div>
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+            onerror="this.outerHTML='<i class=\'fab fa-python\' style=\'font-size:2.2rem;color:var(--accent-cyan)\'></i>'"/>
+          <span>Python</span>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-category__icon"><i class="fas fa-brain"></i></div>
-          <h3>Machine Learning</h3>
-          <div class="skill-tags">
-            <span class="tag">Scikit-Learn</span>
-            <span class="tag">Regression</span>
-            <span class="tag">Classification</span>
-            <span class="tag">Clustering</span>
-          </div>
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R"
+            onerror="this.outerHTML='<i class=\'fas fa-chart-bar\' style=\'font-size:2.2rem;color:var(--accent-cyan)\'></i>'"/>
+          <span>R</span>
         </div>
 
-        <div class="skill-category reveal">
-          <div class="skill-category__icon"><i class="fas fa-cogs"></i></div>
-          <h3>Tools & Platforms</h3>
-          <div class="skill-tags">
-            <span class="tag">Git</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">VS Code</span>
-          </div>
+        <div class="skill-icon-card">
+          <!-- Excel icon using a custom SVG fallback -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel"
+            onerror="this.outerHTML='<i class=\'fas fa-file-excel\' style=\'font-size:2.2rem;color:#1d6f42\'></i>'"/>
+          <span>Excel</span>
+        </div>
+
+        <div class="skill-icon-card">
+          <!-- Power BI -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI"
+            onerror="this.outerHTML='<i class=\'fas fa-chart-pie\' style=\'font-size:2.2rem;color:#f2c811\'></i>'"/>
+          <span>Power BI</span>
+        </div>
+
+        <div class="skill-icon-card">
+          <!-- Tableau -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau"
+            style="border-radius:4px;"
+            onerror="this.outerHTML='<i class=\'fas fa-table\' style=\'font-size:2.2rem;color:var(--accent-cyan)\'></i>'"/>
+          <span>Tableau</span>
+        </div>
+
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+            onerror="this.outerHTML='<i class=\'fab fa-git-alt\' style=\'font-size:2.2rem;color:#f05032\'></i>'"/>
+          <span>Git</span>
+        </div>
+
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"
+            onerror="this.outerHTML='<i class=\'fas fa-table\' style=\'font-size:2.2rem;color:var(--accent-indigo)\'></i>'"/>
+          <span>Pandas</span>
+        </div>
+
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"
+            onerror="this.outerHTML='<i class=\'fas fa-brain\' style=\'font-size:2.2rem;color:#f89939\'></i>'"/>
+          <span>Scikit-learn</span>
+        </div>
+
+        <div class="skill-icon-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"
+            onerror="this.outerHTML='<i class=\'fas fa-server\' style=\'font-size:2.2rem;color:#336791\'></i>'"/>
+          <span>PostgreSQL</span>
         </div>
 
       </div>
@@ -169,10 +405,17 @@
   <section class="section projects" id="projects">
     <div class="container">
       <div class="section-label">03 — Projects</div>
-      <h2 class="section-title">Featured work</h2>
+      <div class="projects-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <a href="#" class="btn btn--ghost btn--sm">View All Projects <i class="fas fa-arrow-up-right-from-square"></i></a>
+      </div>
       <div class="projects-grid">
 
         <article class="project-card reveal">
+          <div class="project-card__thumb">
+            <img src="images/project1.png" alt="Sales Insights Dashboard"
+              onerror="this.parentElement.classList.add('project-card__thumb--placeholder'); this.outerHTML='<i class=\'fas fa-chart-bar\'></i>'"/>
+          </div>
           <div class="project-card__header">
             <div class="project-num">01</div>
             <div class="project-links">
@@ -180,16 +423,20 @@
               <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <h3 class="project-title">Employee Burnout Prediction</h3>
-          <p class="project-desc">Built machine learning models to identify employee burnout based on work habits and health indicators. Achieved 87% accuracy using ensemble methods.</p>
+          <h3 class="project-title">Sales Insights Dashboard</h3>
+          <p class="project-desc">Interactive Power BI dashboard for analyzing sales performance across regions and categories.</p>
           <div class="project-tags">
-            <span class="tag tag--sm">Python</span>
-            <span class="tag tag--sm">Pandas</span>
-            <span class="tag tag--sm">Scikit-Learn</span>
+            <span class="tag tag--sm">Power BI</span>
+            <span class="tag tag--sm">DAX</span>
+            <span class="tag tag--sm">Data Analysis</span>
           </div>
         </article>
 
         <article class="project-card reveal">
+          <div class="project-card__thumb">
+            <img src="images/project2.png" alt="Customer Segmentation"
+              onerror="this.parentElement.classList.add('project-card__thumb--placeholder'); this.outerHTML='<i class=\'fas fa-users\'></i>'"/>
+          </div>
           <div class="project-card__header">
             <div class="project-num">02</div>
             <div class="project-links">
@@ -197,16 +444,20 @@
               <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <h3 class="project-title">Construction Business Analysis</h3>
-          <p class="project-desc">Analyzed unit profitability and pricing strategies for a real estate development project. Delivered actionable insights using SQL and Excel dashboards.</p>
+          <h3 class="project-title">Customer Segmentation</h3>
+          <p class="project-desc">Customer segmentation using K-Means clustering to identify key customer groups.</p>
           <div class="project-tags">
-            <span class="tag tag--sm">Excel</span>
-            <span class="tag tag--sm">SQL</span>
-            <span class="tag tag--sm">Analytics</span>
+            <span class="tag tag--sm">Python</span>
+            <span class="tag tag--sm">Scikit-learn</span>
+            <span class="tag tag--sm">Machine Learning</span>
           </div>
         </article>
 
         <article class="project-card reveal">
+          <div class="project-card__thumb">
+            <img src="images/project3.png" alt="Retail Database Analysis"
+              onerror="this.parentElement.classList.add('project-card__thumb--placeholder'); this.outerHTML='<i class=\'fas fa-database\'></i>'"/>
+          </div>
           <div class="project-card__header">
             <div class="project-num">03</div>
             <div class="project-links">
@@ -214,12 +465,12 @@
               <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <h3 class="project-title">Vehicle Performance Regression</h3>
-          <p class="project-desc">Applied regression techniques on the mtcars dataset to understand vehicle performance factors. Visualized findings with ggplot2 in R.</p>
+          <h3 class="project-title">Retail Database Analysis</h3>
+          <p class="project-desc">SQL-based analysis of a retail database to extract meaningful business insights.</p>
           <div class="project-tags">
-            <span class="tag tag--sm">R</span>
-            <span class="tag tag--sm">Statistics</span>
-            <span class="tag tag--sm">Regression</span>
+            <span class="tag tag--sm">SQL</span>
+            <span class="tag tag--sm">MySQL</span>
+            <span class="tag tag--sm">Data Analysis</span>
           </div>
         </article>
 
@@ -239,16 +490,22 @@
   <section class="section photography" id="photography">
     <div class="container">
       <div class="section-label">04 — Photography</div>
-      <h2 class="section-title">Through the lens</h2>
-      <p class="section-sub">Beyond data — I capture moments, light, and stories.</p>
-      <div class="photo-grid reveal">
-
-        <img src="images/gallery1.jpeg" class="gallery-img">
-        <img src="images/gallery2.jpeg" class="gallery-img">
-        <img src="images/gallery3.jpeg" class="gallery-img">
-        <img src="images/gallery4.jpeg" class="gallery-img">
-        <img src="images/gallery5.jpeg" class="gallery-img">
-
+      <div class="photography-header">
+        <div>
+          <h2 class="section-title">Moments From My Lens</h2>
+          <p class="section-sub" style="margin-bottom:0; margin-top:0.4rem;">Beyond data — I capture moments, light, and stories.</p>
+        </div>
+        <a href="#" class="btn btn--ghost btn--sm" style="flex-shrink:0;">View Full Gallery <i class="fas fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="photo-grid-new reveal">
+        <img src="images/gallery1.jpeg" class="gallery-img" alt="Photography 1"
+          onerror="this.style.background='var(--bg-card)'; this.style.border='1px solid var(--border)'"/>
+        <img src="images/gallery2.jpeg" class="gallery-img" alt="Photography 2"
+          onerror="this.style.background='var(--bg-card)'; this.style.border='1px solid var(--border)'"/>
+        <img src="images/gallery3.jpeg" class="gallery-img" alt="Photography 3"
+          onerror="this.style.background='var(--bg-card)'; this.style.border='1px solid var(--border)'"/>
+        <img src="images/gallery4.jpeg" class="gallery-img" alt="Photography 4"
+          onerror="this.style.background='var(--bg-card)'; this.style.border='1px solid var(--border)'"/>
       </div>
     </div>
   </section>
@@ -257,54 +514,31 @@
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section-label">05 — Contact</div>
-      <h2 class="section-title">Let's connect</h2>
-      <p class="section-sub">I'm actively looking for data analyst roles. Reach out — let's talk numbers.</p>
-      <div class="contact-grid">
-        <div class="contact-links reveal">
-          <a href="mailto:geet@example.com" class="contact-card">
-            <div class="contact-card__icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <span class="contact-card__label">Email</span>
-              <span class="contact-card__val">geet@example.com</span>
-            </div>
-            <i class="fas fa-arrow-up-right-from-square contact-card__arrow"></i>
-          </a>
-          <a href="#" class="contact-card">
-            <div class="contact-card__icon"><i class="fab fa-linkedin-in"></i></div>
-            <div>
-              <span class="contact-card__label">LinkedIn</span>
-              <span class="contact-card__val">linkedin.com/in/geetbidwai</span>
-            </div>
-            <i class="fas fa-arrow-up-right-from-square contact-card__arrow"></i>
-          </a>
-          <a href="#" class="contact-card">
-            <div class="contact-card__icon"><i class="fab fa-github"></i></div>
-            <div>
-              <span class="contact-card__label">GitHub</span>
-              <span class="contact-card__val">github.com/geetbidwai</span>
-            </div>
-            <i class="fas fa-arrow-up-right-from-square contact-card__arrow"></i>
-          </a>
-        </div>
-        <div class="contact-form-wrap reveal">
-          <div class="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" placeholder="Your name"/>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="your@email.com"/>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" rows="4" placeholder="Tell me about the opportunity..."></textarea>
-            </div>
-            <button type="button" class="btn btn--primary btn--full" onclick="handleContact()">
-              Send Message <i class="fas fa-paper-plane"></i>
-            </button>
+      <h2 class="section-title">Let's Build Something Meaningful</h2>
+      <p class="section-sub">I'm currently open to new opportunities. Let's connect!</p>
+
+      <div class="contact-info-row reveal">
+        <a href="mailto:geetbidwai1@gmail.com" class="contact-info-card">
+          <div class="contact-info-card__icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-info-card__text">
+            <span>Email</span>
+            <p>geetbidwai1@gmail.com</p>
           </div>
-        </div>
+        </a>
+        <a href="https://linkedin.com/in/geetbidwai1" target="_blank" class="contact-info-card">
+          <div class="contact-info-card__icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-info-card__text">
+            <span>LinkedIn</span>
+            <p>linkedin.com/in/geetbidwai1</p>
+          </div>
+        </a>
+        <a href="https://github.com/geetbidwai" target="_blank" class="contact-info-card">
+          <div class="contact-info-card__icon"><i class="fab fa-github"></i></div>
+          <div class="contact-info-card__text">
+            <span>GitHub</span>
+            <p>github.com/geetbidwai</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -313,7 +547,8 @@
   <footer class="footer">
     <div class="footer-inner">
       <span class="footer-logo">GB<span class="logo-dot">.</span></span>
-      <p class="footer-copy">Built by Geet Bidwai · MSc Statistics Graduate · Aspiring Data Analyst</p>
+      <p class="footer-copy">© 2024 Geet Bidwai. All rights reserved.</p>
+      <p class="footer-copy" style="color:var(--text-muted);">Designed &amp; Built with <span style="color:#e44;">♥</span></p>
       <div class="footer-socials">
         <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -351,7 +586,7 @@
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
     // ── Counter animation
@@ -362,12 +597,14 @@
           const el = e.target;
           const target = +el.dataset.target;
           let count = 0;
-          const step = () => {
-            count++;
+          const duration = 1000;
+          const steps = Math.min(target, 60);
+          const interval = duration / steps;
+          const timer = setInterval(() => {
+            count += Math.ceil(target / steps);
+            if (count >= target) { count = target; clearInterval(timer); }
             el.textContent = count;
-            if (count < target) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
+          }, interval);
           counterObserver.unobserve(el);
         }
       });
@@ -386,17 +623,6 @@
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     });
-
-    // ── Contact form handler (placeholder)
-    function handleContact() {
-      const btn = document.querySelector('.btn--full');
-      btn.textContent = 'Message sent! ✓';
-      btn.style.background = '#22c55e';
-      setTimeout(() => {
-        btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-        btn.style.background = '';
-      }, 3000);
-    }
   </script>
 </body>
 </html>
