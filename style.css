@@ -42,8 +42,8 @@ body{
 
     position:absolute;
 
-    width:350px;
-    height:350px;
+    width:250px;
+    height:250px;
 
     background:#2563eb;
 
@@ -65,7 +65,7 @@ body{
 }
 
 .hero-text h1{
-    font-size:5rem;
+    font-size:4.5rem;
     font-weight:800;
 
     background:linear-gradient(
@@ -303,6 +303,10 @@ p {
         gap: 40px;
     }
 
+    .hero-image{
+        order:-1;
+    }
+
     .hero-text{
         max-width: 100%;
     }
@@ -314,6 +318,7 @@ p {
     .hero-text h2{
         font-size: 1.5rem;
     }
+
 
     .profile-pic{
         width: 250px;
@@ -332,8 +337,7 @@ p {
     }
 
     .nav-links{
-        gap:12px;
-        font-size:0.9rem;
+        display:none;
     }
 
     .stats{
@@ -349,7 +353,18 @@ p {
         padding:50px 20px;
     }
 
-}
-.nav-links{
-    display:none;
+    .hero{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .buttons a{
+        margin-right:0;
+    }
+
+    .about-card{
+        padding:25px;
+        text-align:left;
+    }
+
 }
