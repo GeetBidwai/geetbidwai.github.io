@@ -1,179 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geet Bidwai | Portfolio</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geet Bidwai — Data Analyst</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
-
 <body>
-<nav class="navbar">
-    <div class="logo">GB</div>
 
-    <ul class="nav-links">
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">GB<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#photography">Photography</a></li>
         <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-    <section class="hero">
+      </ul>
+      <a href="assets/resume.pdf" target="_blank" class="nav-cta">Resume <i class="fa fa-arrow-up-right-from-square"></i></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#photography">Photography</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/resume.pdf" target="_blank" class="mobile-cta">Resume</a>
+    </div>
+  </nav>
 
-        <div class="hero-text">
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-glow hero-glow--1"></div>
+    <div class="hero-glow hero-glow--2"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow"><span class="eyebrow-dot"></span> Open to opportunities</p>
+        <h1 class="hero-name">
+          <span class="name-hello">Hello, I'm</span>
+          <span class="name-first">Geet</span>
+          <span class="name-last">Bidwai</span>
+        </h1>
+        <p class="hero-role">MSc Statistics Graduate <span class="role-sep">×</span> Aspiring Data Analyst</p>
+        <p class="hero-tagline">Turning raw data into decisions that matter.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary">View My Work</a>
+          <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+        </div>
+        <div class="hero-socials">
+          <a href="#" aria-label="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Photography" class="social-icon"><i class="fas fa-camera"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-ring">
+          <div class="profile-ring__inner">
+            <img src="images/profile.jpg" alt="Geet Bidwai" class="profile-img"/>
+          </div>
+          <svg class="ring-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="160" cy="160" r="155" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="12 8"/>
+          </svg>
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38bdf8"/>
+              <stop offset="1" stop-color="#6366f1"/>
+            </linearGradient>
+          </defs>
+          <div class="badge badge--tl">
+            <span class="badge-num">2+</span>
+            <span class="badge-lbl">Internships</span>
+          </div>
+          <div class="badge badge--br">
+            <span class="badge-num">5+</span>
+            <span class="badge-lbl">Projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span class="scroll-line"></span>
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
 
-            <p class="hello">Hello, I'm</p>
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-label">01 — About Me</div>
+      <h2 class="section-title">The story so far</h2>
+      <div class="about-grid">
+        <div class="about-bio reveal">
+          <p>I'm an <strong>MSc Statistics graduate</strong> passionate about transforming raw data into meaningful business insights. My interests span Data Analytics, Business Intelligence, Statistical Modeling, and Data Visualization.</p>
+          <p>I enjoy working with <strong>SQL, Python, R, Excel, and Power BI</strong> to solve real-world problems through data-driven decisions — finding patterns others miss and communicating them clearly.</p>
+          <p>When I'm not wrangling datasets, I'm out capturing the world through a lens.</p>
+          <a href="assets/resume.pdf" class="btn btn--outline" target="_blank">
+            <i class="fas fa-file-alt"></i> Download Resume
+          </a>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+            <span class="stat-lbl">Internships</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+            <span class="stat-lbl">Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-lbl">Languages</span>
+          </div>
+          <div class="stat-card stat-card--accent">
+            <span class="stat-num stat-text">MSc</span>
+            <span class="stat-lbl">Statistics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <h1>Geet Bidwai</h1>
+  <!-- ═══ SKILLS ═══ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label">02 — Skills</div>
+      <h2 class="section-title">Tools of the trade</h2>
+      <div class="skills-grid">
 
-            <h2>MSc Statistics Graduate | Aspiring Data Analyst</h2>
+        <div class="skill-category reveal">
+          <div class="skill-category__icon"><i class="fas fa-database"></i></div>
+          <h3>Data & Analytics</h3>
+          <div class="skill-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+          </div>
+        </div>
 
-            <p class="tagline">
-                Turning data into meaningful business insights.
-            </p>
+        <div class="skill-category reveal">
+          <div class="skill-category__icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Visualization</h3>
+          <div class="skill-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">Excel</span>
+          </div>
+        </div>
 
-            <div class="buttons">
-                <a href="assets/resume.pdf" target="_blank">Resume</a>
+        <div class="skill-category reveal">
+          <div class="skill-category__icon"><i class="fas fa-brain"></i></div>
+          <h3>Machine Learning</h3>
+          <div class="skill-tags">
+            <span class="tag">Scikit-Learn</span>
+            <span class="tag">Regression</span>
+            <span class="tag">Classification</span>
+            <span class="tag">Clustering</span>
+          </div>
+        </div>
 
-                <a href="https://github.com/GeetBidwai/" target="_blank">
-                    GitHub
-                </a>
+        <div class="skill-category reveal">
+          <div class="skill-category__icon"><i class="fas fa-cogs"></i></div>
+          <h3>Tools & Platforms</h3>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
 
-                <a href="https://www.linkedin.com/in/geetbidwai/" target="_blank">
-                    LinkedIn
-                </a>
-                <a href="https://www.instagram.com/naalaykk__/" target="_blank">
-                    Photography 📷
-                </a>    
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-label">03 — Projects</div>
+      <h2 class="section-title">Featured work</h2>
+      <div class="projects-grid">
+
+        <article class="project-card reveal">
+          <div class="project-card__header">
+            <div class="project-num">01</div>
+            <div class="project-links">
+              <a href="#" aria-label="View project"><i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
+          </div>
+          <h3 class="project-title">Employee Burnout Prediction</h3>
+          <p class="project-desc">Built machine learning models to identify employee burnout based on work habits and health indicators. Achieved 87% accuracy using ensemble methods.</p>
+          <div class="project-tags">
+            <span class="tag tag--sm">Python</span>
+            <span class="tag tag--sm">Pandas</span>
+            <span class="tag tag--sm">Scikit-Learn</span>
+          </div>
+        </article>
 
-        </div>
-
-        <div class="hero-image">
-            <img src="images/profile.jpg"
-                alt="Profile Picture"
-                class="profile-pic">
-        </div>
-
-    </section>
-
-    <section id="about" class="about">
-
-        <h2 class="section-title">About Me</h2>
-
-        <div class="about-card">
-
-            <p>
-                I'm an MSc Statistics graduate passionate about transforming
-                raw data into meaningful business insights.
-
-                My interests include Data Analytics, Business Intelligence,
-                Statistical Modeling, and Data Visualization.
-
-                I enjoy working with SQL, Python, R, Excel, and Power BI
-                to solve real-world problems through data-driven decisions.
-            </p>
-
-        </div>
-
-    </section>
-
-    <section class="stats">
-
-        <div class="stat-card">
-            <h3>2+</h3>
-            <p>Internships</p>
-        </div>
-
-        <div class="stat-card">
-            <h3>5+</h3>
-            <p>Projects</p>
-        </div>
-
-        <div class="stat-card">
-            <h3>3+</h3>
-            <p>Languages</p>
-        </div>
-
-        <div class="stat-card">
-            <h3>MSc</h3>
-            <p>Statistics</p>
-        </div>
-
-    </section>
-
-    <section id="projects" class="projects">
-
-        <h2 class="section-title">Featured Projects</h2>
-
-        <div class="project-grid">
-
-            <div class="project-card">
-                <h3>Employee Burnout Prediction</h3>
-
-                <p>
-                    Built machine learning models to identify employee burnout
-                    based on work habits and health indicators.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Pandas</span>
-                    <span>Scikit-Learn</span>
-                </div>
-
-                <a href="#">View Project →</a>
+        <article class="project-card reveal">
+          <div class="project-card__header">
+            <div class="project-num">02</div>
+            <div class="project-links">
+              <a href="#" aria-label="View project"><i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
+          </div>
+          <h3 class="project-title">Construction Business Analysis</h3>
+          <p class="project-desc">Analyzed unit profitability and pricing strategies for a real estate development project. Delivered actionable insights using SQL and Excel dashboards.</p>
+          <div class="project-tags">
+            <span class="tag tag--sm">Excel</span>
+            <span class="tag tag--sm">SQL</span>
+            <span class="tag tag--sm">Analytics</span>
+          </div>
+        </article>
 
-            <div class="project-card">
-                <h3>Construction Business Analysis</h3>
-
-                <p>
-                    Analyzed unit profitability and pricing strategies for a
-                    real estate development project.
-                </p>
-
-                <div class="tech-stack">
-                    <span>Excel</span>
-                    <span>SQL</span>
-                    <span>Analytics</span>
-                </div>
-
-                <a href="#">View Project →</a>
+        <article class="project-card reveal">
+          <div class="project-card__header">
+            <div class="project-num">03</div>
+            <div class="project-links">
+              <a href="#" aria-label="View project"><i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
+          </div>
+          <h3 class="project-title">Vehicle Performance Regression</h3>
+          <p class="project-desc">Applied regression techniques on the mtcars dataset to understand vehicle performance factors. Visualized findings with ggplot2 in R.</p>
+          <div class="project-tags">
+            <span class="tag tag--sm">R</span>
+            <span class="tag tag--sm">Statistics</span>
+            <span class="tag tag--sm">Regression</span>
+          </div>
+        </article>
 
-            <div class="project-card">
-                <h3>Regression Analysis</h3>
+        <article class="project-card project-card--cta reveal">
+          <div class="cta-card-inner">
+            <i class="fas fa-folder-open cta-icon"></i>
+            <p>More projects on GitHub</p>
+            <a href="#" class="btn btn--ghost btn--sm">View All <i class="fab fa-github"></i></a>
+          </div>
+        </article>
 
-                <p>
-                    Applied regression techniques on the mtcars dataset
-                    to understand vehicle performance factors.
-                </p>
+      </div>
+    </div>
+  </section>
 
-                <div class="tech-stack">
-                    <span>R</span>
-                    <span>Statistics</span>
-                    <span>Regression</span>
-                </div>
-
-                <a href="#">View Project →</a>
-            </div>
-
+  <!-- ═══ PHOTOGRAPHY ═══ -->
+  <section class="section photography" id="photography">
+    <div class="container">
+      <div class="section-label">04 — Photography</div>
+      <h2 class="section-title">Through the lens</h2>
+      <p class="section-sub">Beyond data — I capture moments, light, and stories.</p>
+      <div class="photo-grid reveal">
+        <div class="photo-placeholder photo-placeholder--tall">
+          <i class="fas fa-image"></i>
+          <span>Add photo</span>
         </div>
+        <div class="photo-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Add photo</span>
+        </div>
+        <div class="photo-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Add photo</span>
+        </div>
+        <div class="photo-placeholder photo-placeholder--wide">
+          <i class="fas fa-image"></i>
+          <span>Add photo</span>
+        </div>
+        <div class="photo-placeholder">
+          <i class="fas fa-image"></i>
+          <span>Add photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </section>    
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-label">05 — Contact</div>
+      <h2 class="section-title">Let's connect</h2>
+      <p class="section-sub">I'm actively looking for data analyst roles. Reach out — let's talk numbers.</p>
+      <div class="contact-grid">
+        <div class="contact-links reveal">
+          <a href="mailto:geet@example.com" class="contact-card">
+            <div class="contact-card__icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-card__label">Email</span>
+              <span class="contact-card__val">geet@example.com</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-card__arrow"></i>
+          </a>
+          <a href="#" class="contact-card">
+            <div class="contact-card__icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <span class="contact-card__label">LinkedIn</span>
+              <span class="contact-card__val">linkedin.com/in/geetbidwai</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-card__arrow"></i>
+          </a>
+          <a href="#" class="contact-card">
+            <div class="contact-card__icon"><i class="fab fa-github"></i></div>
+            <div>
+              <span class="contact-card__label">GitHub</span>
+              <span class="contact-card__val">github.com/geetbidwai</span>
+            </div>
+            <i class="fas fa-arrow-up-right-from-square contact-card__arrow"></i>
+          </a>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <div class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name"/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="your@email.com"/>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell me about the opportunity..."></textarea>
+            </div>
+            <button type="button" class="btn btn--primary btn--full" onclick="handleContact()">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <p>Built by Geet Bidwai</p>
-        <p>MSc Statistics Graduate | Aspiring Data Analyst</p>
-    </footer>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">GB<span class="logo-dot">.</span></span>
+      <p class="footer-copy">Built by Geet Bidwai · MSc Statistics Graduate · Aspiring Data Analyst</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
 
+  <script>
+    // ── Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ── Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // ── Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── Counter animation
+    const statNums = document.querySelectorAll('.stat-num[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = +el.dataset.target;
+          let count = 0;
+          const step = () => {
+            count++;
+            el.textContent = count;
+            if (count < target) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    statNums.forEach(el => counterObserver.observe(el));
+
+    // ── Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+
+    // ── Contact form handler (placeholder)
+    function handleContact() {
+      const btn = document.querySelector('.btn--full');
+      btn.textContent = 'Message sent! ✓';
+      btn.style.background = '#22c55e';
+      setTimeout(() => {
+        btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        btn.style.background = '';
+      }, 3000);
+    }
+  </script>
 </body>
-
 </html>
