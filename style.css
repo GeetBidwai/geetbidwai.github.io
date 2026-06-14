@@ -261,8 +261,8 @@ button { font-family: inherit; outline: none; border: none; cursor: pointer; }
   overflow: hidden;
   background:
     linear-gradient(
-      rgba(255,255,255,0.82),
-      rgba(255,255,255,0.88)
+      rgba(255,255,255,0.50),
+      rgba(255,255,255,0.60)
     ),
     url("images/hero.jpeg");
   background-size: cover;
@@ -640,6 +640,14 @@ button { font-family: inherit; outline: none; border: none; cursor: pointer; }
 /* ════════════════════════════════
    CONTACT
    ════════════════════════════════ */
+.contact {
+  background:
+    linear-gradient(rgba(255,255,255,0.50), rgba(255,255,255,0.60)),
+    url("images/footer.jpeg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
 .contact-info-row {
   display: flex;
   gap: 1.1rem;
