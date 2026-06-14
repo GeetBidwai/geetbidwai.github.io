@@ -421,31 +421,6 @@ input, textarea, button { font-family: inherit; outline: none; border: none; }
 }
 
 
-/* Scroll hint */
-.scroll-hint {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  animation: bounce 2.5s ease-in-out infinite;
-  z-index: 1;
-}
-.scroll-line {
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, var(--accent-cyan), transparent);
-  border-radius: 1px;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
-
 /* ════════════════════════════════════════
    ABOUT
    ════════════════════════════════════════ */
