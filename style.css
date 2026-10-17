@@ -1346,30 +1346,6 @@ button { font-family: inherit; outline: none; border: none; cursor: pointer; }
 }
 
 
-/* PivotPulse: reset the chart and its SVG fills */
-
-.project-card__thumb.visual-pivot .pivot-chart-area svg {
-  background: transparent !important;
-}
-
-.project-card__thumb.visual-pivot .pulse-area {
-  fill: #eaf1ff !important;
-  stroke: none !important;
-}
-
-.project-card__thumb.visual-pivot .pulse-line {
-  fill: none !important;
-  stroke: #2563eb !important;
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.project-card__thumb.visual-pivot .pulse-endpoint {
-  fill: #ffffff !important;
-  stroke: #2563eb !important;
-}
-
 /* Milkman: simple, contained screenshot preview */
 
 .project-card__thumb.visual-milkman {
