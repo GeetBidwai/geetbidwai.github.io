@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Milkman | Geet Bidwai</title>
+  <meta name="description"
+        content="Milkman is a full-stack milk delivery management application built with React and Django. Explore its product catalogue, subscriptions, billing and order management features.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .milkman-hero {
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+    }
+
+    .milkman-hero .section-sub {
+      max-width: 760px;
+    }
+
+    .milkman-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+    }
+
+    .milkman-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--border-color, rgba(128,128,128,0.25));
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .milkman-actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .milkman-intro {
+      max-width: 850px;
+      line-height: 1.85;
+    }
+
+    .milkman-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .milkman-feature {
+      padding: 1.5rem;
+      border: 1px solid var(--border-color, rgba(128,128,128,0.2));
+      border-radius: 16px;
+      height: 100%;
+    }
+
+    .milkman-feature-icon {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+
+    .milkman-feature h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .milkman-feature p {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      margin: 0;
+    }
+
+    .milkman-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .milkman-shot {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border-color, rgba(128,128,128,0.2));
+      border-radius: 16px;
+      background: var(--card-bg, transparent);
+    }
+
+    .milkman-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      background: #f5f5f5;
+      transition: transform 0.3s ease;
+    }
+
+    .milkman-shot:hover img {
+      transform: scale(1.02);
+    }
+
+    .milkman-shot figcaption {
+      padding: 1rem 1.1rem;
+    }
+
+    .milkman-shot figcaption strong {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .milkman-shot figcaption span {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
+    .milkman-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.5rem;
+    }
+
+    .milkman-stack .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .milkman-next {
+      margin-top: 2rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 760px) {
+      .milkman-hero {
+        padding-top: 8rem;
+      }
+
+      .milkman-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .milkman-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .milkman-features {
+        grid-template-columns: 1fr;
+      }
+
+      .milkman-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">GB<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+
+      <a href="../assets/resume.pdf"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="nav-cta">
+        Resume <i class="fas fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section milkman-hero">
+    <div class="container">
+
+      <div class="section-eyebrow">Full-Stack Development · Project 04</div>
+
+      <h1 class="section-title">Milkman</h1>
+
+      <p class="section-sub">
+        A web-based milk delivery management application built to
+        organize product browsing, customer orders, recurring
+        subscriptions, and billing in one place.
+      </p>
+
+      <div class="milkman-meta">
+        <span><i class="fab fa-react"></i> React</span>
+        <span><i class="fab fa-python"></i> Django</span>
+        <span><i class="fas fa-database"></i> SQLite</span>
+      </div>
+
+      <div class="milkman-actions">
+        <a href="https://github.com/GeetBidwai/Milkman"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn--primary">
+          <i class="fab fa-github"></i> View GitHub Repository
+        </a>
+
+        <a href="../index.html#projects" class="btn btn--outline">
+          <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--alt">
+    <div class="container">
+
+      <div class="section-eyebrow">01 / Overview</div>
+      <h2 class="section-title">Bringing Milk Delivery Online</h2>
+
+      <div class="milkman-intro">
+        <p>
+          Traditional milk delivery can involve manual customer
+          records, delivery tracking, subscription management, and
+          billing. Keeping these activities organized becomes
+          difficult when information is spread across separate records.
+        </p>
+
+        <p>
+          Milkman explores a centralized, web-based approach to these
+          operations. Customers can browse dairy products, add items
+          to a cart, place orders, and manage subscriptions through
+          the application's interface.
+        </p>
+
+        <p>
+          The project uses React for the frontend and Django for
+          backend functionality, with API communication connecting
+          the application layers.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-eyebrow">02 / Functionality</div>
+      <h2 class="section-title">Key Features</h2>
+
+      <p class="section-sub">
+        An overview of the workflows demonstrated in the application.
+      </p>
+
+      <div class="milkman-features">
+
+        <article class="milkman-feature">
+          <div class="milkman-feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Customer Registration</h3>
+          <p>
+            A customer registration interface for collecting
+            account and contact details.
+          </p>
+        </article>
+
+        <article class="milkman-feature">
+          <div class="milkman-feature-icon">
+            <i class="fas fa-bottle-water"></i>
+          </div>
+          <h3>Product Catalogue</h3>
+          <p>
+            Browse dairy products with product information,
+            prices, and shopping controls.
+          </p>
+        </article>
+
+        <article class="milkman-feature">
+          <div class="milkman-feature-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3>Subscriptions</h3>
+          <p>
+            Select a product subscription, choose a delivery
+            frequency, and specify a start date.
+          </p>
+        </article>
+
+        <article class="milkman-feature">
+          <div class="milkman-feature-icon">
+            <i class="fas fa-cart-shopping"></i>
+          </div>
+          <h3>Cart and Billing</h3>
+          <p>
+            Review cart items, quantities, order totals,
+            customer details, and checkout information.
+          </p>
+        </article>
+
+        <article class="milkman-feature">
+          <div class="milkman-feature-icon">
+            <i class="fas fa-receipt"></i>
+          </div>
+          <h3>Order Confirmation</h3>
+          <p>
+            Display order confirmation details and a summary
+            of the submitted order.
+          </p>
+        </article>
+
+        <article class="milkman-feature">
+          <div class="milkman-feature-icon">
+            <i class="fas fa-list-check"></i>
+          </div>
+          <h3>Subscription History</h3>
+          <p>
+            View subscription information, including the
+            selected product, frequency, start date, and status.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT GALLERY -->
+  <section class="section section--alt">
+    <div class="container">
+
+      <div class="section-eyebrow">03 / Application Preview</div>
+      <h2 class="section-title">Inside Milkman</h2>
+
+      <p class="section-sub">
+        A closer look at the application's customer-facing
+        interface and its main workflows.
+      </p>
+
+      <div class="milkman-gallery">
+
+        <figure class="milkman-shot">
+          <img
+            src="../images/milkman/registration.png"
+            alt="Milkman customer registration interface"
+            loading="lazy">
+          <figcaption>
+            <strong>Customer Registration</strong>
+            <span>The interface for entering customer and account details.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="milkman-shot">
+          <img
+            src="../images/milkman/product-catalog.png"
+            alt="Milkman dairy product catalogue"
+            loading="lazy">
+          <figcaption>
+            <strong>Product Catalogue</strong>
+            <span>Browse available dairy products and their displayed prices.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="milkman-shot">
+          <img
+            src="../images/milkman/subscription.png"
+            alt="Milkman product subscription form"
+            loading="lazy">
+          <figcaption>
+            <strong>Subscription Setup</strong>
+            <span>Choose a subscription frequency and start date.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="milkman-shot">
+          <img
+            src="../images/milkman/billing.png"
+            alt="Milkman shopping cart and billing interface"
+            loading="lazy">
+          <figcaption>
+            <strong>Cart and Billing</strong>
+            <span>Review selected items, totals, and checkout details.</span>
+          </figcaption>
+        </figure>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY STACK -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-eyebrow">04 / Implementation</div>
+      <h2 class="section-title">Technology Stack</h2>
+
+      <p class="section-sub">
+        The technologies used in the project, as documented
+        in the project presentation.
+      </p>
+
+      <div class="project-tags milkman-stack">
+        <span class="tag"><i class="fab fa-react"></i> React</span>
+        <span class="tag"><i class="fab fa-python"></i> Django</span>
+        <span class="tag"><i class="fas fa-plug"></i> Axios API Calls</span>
+        <span class="tag"><i class="fas fa-database"></i> SQLite</span>
+      </div>
+
+      <div class="milkman-next">
+        <h3>Project Takeaway</h3>
+        <p>
+          Milkman provided practical experience in full-stack
+          application development, connecting a React interface
+          with Django backend functionality and organizing
+          customer-facing ordering workflows.
+        </p>
+      </div>
+
+      <div class="milkman-actions">
+        <a href="https://github.com/GeetBidwai/Milkman"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn--primary">
+          <i class="fab fa-github"></i> Explore the Source Code
+        </a>
+
+        <a href="../index.html#projects" class="btn btn--outline">
+          Back to All Projects
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">GB<span>.</span></span>
+      <p class="footer-copy">© 2026 Geet Bidwai</p>
+    </div>
+  </footer>
+
+</body>
+</html>
