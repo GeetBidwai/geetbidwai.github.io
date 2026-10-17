@@ -229,9 +229,37 @@
 
         <!-- ERP -->
         <article class="project-card reveal">
-          <div class="project-card__thumb">
-            <i class="fas fa-layer-group"></i>
+
+          <div class="project-card__thumb visual-erp">
+            <div class="erp-window">
+              <div class="visual-window-top">
+                <span></span><span></span><span></span>
+                <small>BUSINESS OVERVIEW</small>
+              </div>
+              <div class="erp-content">
+                <div class="erp-side">
+                  <i class="fas fa-layer-group"></i>
+                  <i class="fas fa-boxes-stacked"></i>
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="erp-main">
+                  <div class="erp-kpis">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="erp-chart">
+                    <i style="--bar:35%"></i>
+                    <i style="--bar:60%"></i>
+                    <i style="--bar:44%"></i>
+                    <i style="--bar:82%"></i>
+                    <i style="--bar:68%"></i>
+                    <i style="--bar:94%"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="visual-label">SYSTEMS / OPERATIONS</span>
           </div>
+
 
           <div class="project-card__body">
             <div class="project-card__header">
@@ -264,9 +292,41 @@
 
         <!-- AI-Analyst -->
         <article class="project-card reveal">
-          <div class="project-card__thumb">
-            <i class="fas fa-brain"></i>
+        
+          <div class="project-card__thumb visual-ai">
+            <div class="ai-dashboard">
+              <div class="ai-dashboard-top">
+                <span class="ai-window-dots"><i></i><i></i><i></i></span>
+                <span>AI RESEARCH WORKSPACE</span>
+                <i class="fas fa-sparkles"></i>
+              </div>
+
+              <div class="ai-dashboard-body">
+                <div class="ai-source-list">
+                  <div><i class="fas fa-globe"></i><span>Web Search</span><b>01</b></div>
+                  <div><i class="fas fa-file-lines"></i><span>Source Analysis</span><b>02</b></div>
+                  <div><i class="fas fa-brain"></i><span>AI Synthesis</span><b>03</b></div>
+                </div>
+
+                <div class="ai-result">
+                  <div class="ai-result-heading">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <span>RESEARCH FINDINGS</span>
+                  </div>
+                  <div class="ai-result-line long"></div>
+                  <div class="ai-result-line medium"></div>
+                  <div class="ai-result-line short"></div>
+                  <div class="ai-result-highlight">
+                    <i class="fas fa-check-circle"></i>
+                    Structured summary
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <span class="visual-label">AI / RESEARCH / AUTOMATION</span>
           </div>
+
 
           <div class="project-card__body">
             <div class="project-card__header">
@@ -300,9 +360,53 @@
 
         <!-- PivotPulse -->
         <article class="project-card reveal">
-          <div class="project-card__thumb">
-            <i class="fas fa-chart-line"></i>
+
+          <div class="project-card__thumb visual-pivot">
+            <div class="pivot-dashboard">
+              <div class="pivot-dashboard-top">
+                <div>
+                  <span class="pivot-eyebrow">PIVOTPULSE</span>
+                  <strong>Pattern Scanner</strong>
+                </div>
+                <span class="pivot-status"><i></i> SCANNING</span>
+              </div>
+
+              <div class="pivot-chart-area">
+                <div class="pivot-grid-lines">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+
+                <svg viewBox="0 0 440 150" preserveAspectRatio="none"
+                    role="img" aria-label="Decorative stock price chart">
+                  <defs>
+                    <linearGradient id="pulseArea" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#2563eb" stop-opacity=".25"/>
+                      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+
+                  <path class="pulse-area"
+                    d="M0 125 L35 112 L65 118 L95 95 L125 102 L155 76 L185 87 L215 57 L245 70 L275 48 L305 57 L335 29 L365 41 L395 15 L440 8 L440 150 L0 150 Z"/>
+
+                  <path class="pulse-line"
+                    d="M0 125 L35 112 L65 118 L95 95 L125 102 L155 76 L185 87 L215 57 L245 70 L275 48 L305 57 L335 29 L365 41 L395 15 L440 8"/>
+
+                  <circle class="pulse-endpoint" cx="440" cy="8" r="5"/>
+                </svg>
+
+                <div class="pivot-scan-line"></div>
+              </div>
+
+              <div class="pivot-metrics">
+                <div><span>ANALYSIS</span><strong>VCP Patterns</strong></div>
+                <div><span>MARKET</span><strong>Stock Screening</strong></div>
+                <div class="pivot-signal"><i class="fas fa-chart-line"></i></div>
+              </div>
+            </div>
+
+            <span class="visual-label">MARKETS / TECHNICAL ANALYSIS</span>
           </div>
+
 
           <div class="project-card__body">
             <div class="project-card__header">
@@ -334,11 +438,13 @@
         </article>
 
         <!-- Milkman -->
-        <article class="project-card reveal">
-          <div class="project-card__thumb">
-            <i class="fas fa-boxes-stacked"></i>
+        <article class="project-card reveal">    
+          <div class="project-card__thumb visual-milkman">
+            <img
+              src="images/milkman/product-catalog.png"
+              alt="Milkman product catalogue interface"
+              loading="lazy">
           </div>
-
           <div class="project-card__body">
             <div class="project-card__header">
               <div class="project-num"></div>

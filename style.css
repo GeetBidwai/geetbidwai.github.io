@@ -995,3 +995,567 @@ button { font-family: inherit; outline: none; border: none; cursor: pointer; }
     animation: none;
   }
 }
+
+/* FIX: contain project thumbnail visuals */
+
+.project-card__thumb.visual-erp,
+.project-card__thumb.visual-ai,
+.project-card__thumb.visual-pivot,
+.project-card__thumb.visual-milkman {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 210px;
+  min-height: 210px;
+  padding: 0;
+  overflow: hidden;
+  font-size: initial;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+/* Keep decorative labels small */
+.project-card__thumb .visual-label {
+  left: 14px;
+  bottom: 10px;
+  width: auto;
+  height: auto;
+  font-size: 8px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Keep the ERP mockup inside its thumbnail */
+.project-card__thumb .erp-window {
+  width: min(78%, 390px);
+  height: auto;
+  top: 24px;
+  left: 50%;
+  padding: 0;
+  font-size: initial;
+}
+
+/* Keep the AI network contained */
+.project-card__thumb .ai-network {
+  width: 240px;
+  height: 145px;
+  top: 22px;
+  left: 50%;
+}
+
+/* Keep the chart contained */
+.project-card__thumb .pivot-chart {
+  left: 10%;
+  right: 10%;
+  top: 22px;
+  width: auto;
+  height: auto;
+  padding: 13px 16px 9px;
+  font-size: initial;
+}
+
+/* Ensure Milkman image doesn't inherit thumbnail styles */
+.project-card__thumb.visual-milkman img {
+  position: absolute;
+  inset: 12px 8% 0;
+  width: 84%;
+  height: 190px;
+  max-width: 84%;
+  padding: 0;
+  object-fit: contain;
+}
+
+/* Prevent oversized inherited text */
+.project-card__thumb .visual-window-top small,
+.project-card__thumb .pivot-chart-heading,
+.project-card__thumb .pivot-bottom {
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+@media (max-width: 560px) {
+  .project-card__thumb.visual-erp,
+  .project-card__thumb.visual-ai,
+  .project-card__thumb.visual-pivot,
+  .project-card__thumb.visual-milkman {
+    height: 190px;
+    min-height: 190px;
+  }
+
+  .project-card__thumb.visual-milkman img {
+    height: 170px;
+  }
+}
+
+
+/* FINAL ERP THUMBNAIL LAYOUT FIX */
+
+.project-card__thumb.visual-erp {
+  display: block !important;
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+}
+
+.project-card__thumb.visual-erp .erp-window {
+  display: block;
+  position: absolute;
+  width: 78%;
+  max-width: 390px;
+  height: auto;
+  top: 24px;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
+  border: 1px solid #dbe3f0;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  animation: none;
+}
+
+.project-card__thumb.visual-erp .visual-window-top {
+  display: flex;
+  position: static;
+  width: 100%;
+  height: auto;
+  padding: 10px 12px;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.project-card__thumb.visual-erp .visual-window-top small {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 8px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.project-card__thumb.visual-erp .erp-content {
+  display: flex;
+  position: static;
+  min-height: 105px;
+  width: 100%;
+  background: #fff;
+}
+
+.project-card__thumb.visual-erp .erp-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 13px;
+  background: #f8fafc;
+  font-size: 11px;
+}
+
+.project-card__thumb.visual-erp .erp-main {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+}
+
+.project-card__thumb.visual-erp .erp-kpis {
+  display: flex;
+  gap: 8px;
+}
+
+.project-card__thumb.visual-erp .erp-kpis span {
+  display: block;
+  flex: 1;
+  height: 19px;
+  background: #dbeafe;
+  border-radius: 4px;
+}
+
+.project-card__thumb.visual-erp .erp-chart {
+  display: flex;
+  height: 65px;
+  align-items: end;
+  justify-content: space-around;
+  gap: 8px;
+  margin-top: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.project-card__thumb.visual-erp .erp-chart i {
+  display: block;
+  position: static;
+  width: 11%;
+  height: var(--bar);
+  flex: none;
+  background: linear-gradient(#60a5fa, #2563eb);
+  border-radius: 3px 3px 0 0;
+  animation: erp-bars 2.8s ease-in-out infinite alternate;
+}
+
+.project-card__thumb.visual-erp .visual-label {
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+
+/* AI-ANALYST — thumbnail layout repair */
+
+.project-card__thumb.visual-ai {
+  display: block !important;
+  position: relative;
+  height: 210px;
+  min-height: 210px;
+  overflow: hidden;
+  padding: 0;
+  background: radial-gradient(circle at 50% 35%, #e0eaff, #f6f8ff 75%);
+}
+
+.project-card__thumb.visual-ai .ai-dashboard {
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: 82%;
+  max-width: 410px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #d9e3f5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-card__thumb.visual-ai .ai-dashboard-top {
+  display: flex;
+  position: static;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.project-card__thumb.visual-ai .ai-dashboard-body {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 14px;
+  padding: 15px;
+  background: #fff;
+}
+
+.project-card__thumb.visual-ai .ai-source-list {
+  display: grid;
+  align-content: center;
+  gap: 9px;
+}
+
+.project-card__thumb.visual-ai .ai-source-list > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e6edf8;
+  border-radius: 6px;
+  font-size: 9px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.project-card__thumb.visual-ai .ai-result {
+  display: block;
+  padding: 11px;
+  background: #f7f9ff;
+  border-radius: 8px;
+}
+
+.project-card__thumb.visual-ai .ai-result-line {
+  display: block;
+  height: 5px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: #dbe5f5;
+}
+
+.project-card__thumb.visual-ai .visual-label {
+  position: absolute;
+  left: 14px;
+  bottom: 9px;
+  font-size: 8px;
+  line-height: 1.3;
+}
+
+
+/* AI-Analyst: fit the entire mockup inside its thumbnail */
+
+.project-card__thumb.visual-ai .ai-dashboard {
+  top: 16px;
+  width: 82%;
+  height: 170px;
+  overflow: hidden;
+}
+
+.project-card__thumb.visual-ai .ai-dashboard-top {
+  padding: 9px 12px;
+}
+
+.project-card__thumb.visual-ai .ai-dashboard-body {
+  grid-template-columns: 1fr 1.1fr;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.project-card__thumb.visual-ai .ai-source-list {
+  gap: 6px;
+}
+
+.project-card__thumb.visual-ai .ai-source-list > div {
+  padding: 6px;
+  font-size: 8px;
+}
+
+.project-card__thumb.visual-ai .ai-result {
+  padding: 8px;
+}
+
+.project-card__thumb.visual-ai .ai-result-heading {
+  margin-bottom: 7px;
+  font-size: 7px;
+}
+
+.project-card__thumb.visual-ai .ai-result-highlight {
+  margin-top: 8px;
+  padding: 6px;
+  font-size: 7px;
+}
+
+.project-card__thumb.visual-ai .visual-label {
+  bottom: 8px;
+}
+
+
+/* PivotPulse: reset the chart and its SVG fills */
+
+.project-card__thumb.visual-pivot .pivot-chart-area svg {
+  background: transparent !important;
+}
+
+.project-card__thumb.visual-pivot .pulse-area {
+  fill: #eaf1ff !important;
+  stroke: none !important;
+}
+
+.project-card__thumb.visual-pivot .pulse-line {
+  fill: none !important;
+  stroke: #2563eb !important;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.project-card__thumb.visual-pivot .pulse-endpoint {
+  fill: #ffffff !important;
+  stroke: #2563eb !important;
+}
+
+/* Milkman: simple, contained screenshot preview */
+
+.project-card__thumb.visual-milkman {
+  display: flex !important;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 210px;
+  min-height: 210px;
+  padding: 12px;
+  overflow: hidden;
+  background: #f0fdf4;
+}
+
+.project-card__thumb.visual-milkman img {
+  display: block;
+  position: static;
+  width: 88%;
+  max-width: 100%;
+  height: 185px;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  border: 1px solid #d8e8dc;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px #14532d12;
+}
+
+
+/* PivotPulse thumbnail — compact, responsive layout */
+.project-card__thumb.visual-pivot {
+  position: relative;
+  height: 210px;
+  min-height: 210px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.visual-pivot .pivot-dashboard {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.visual-pivot .pivot-dashboard-top {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: nowrap;
+  padding: 12px 16px 4px;
+  min-width: 0;
+}
+
+.visual-pivot .pivot-dashboard-top > div {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.visual-pivot .pivot-eyebrow {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.visual-pivot .pivot-dashboard-top strong {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.visual-pivot .pivot-status {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 9px;
+}
+
+.visual-pivot .pivot-chart-area {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.visual-pivot .pivot-chart-area svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.visual-pivot .pivot-grid-lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  pointer-events: none;
+}
+
+.visual-pivot .pivot-grid-lines span {
+  display: block;
+  width: 100%;
+  border-top: 1px solid rgba(100, 116, 139, 0.12);
+}
+
+.visual-pivot .pulse-line {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.visual-pivot .pulse-area {
+  fill: url(#pulseArea);
+}
+
+.visual-pivot .pulse-endpoint {
+  fill: #fff;
+  stroke: #2563eb;
+  stroke-width: 2;
+}
+
+.visual-pivot .pivot-metrics {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 16px 10px;
+}
+
+.visual-pivot .pivot-metrics > div {
+  min-width: 0;
+}
+
+.visual-pivot .pivot-metrics span {
+  display: block;
+  font-size: 8px;
+}
+
+.visual-pivot .pivot-metrics strong {
+  font-size: 10px;
+}
+
+.visual-pivot .visual-label {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  z-index: 2;
+  font-size: 8px;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .project-card__thumb.visual-pivot {
+    height: 190px;
+    min-height: 190px;
+  }
+
+  .visual-pivot .pivot-dashboard-top {
+    padding: 10px 12px 4px;
+    gap: 6px;
+  }
+
+  .visual-pivot .pivot-dashboard-top strong {
+    font-size: 11px;
+  }
+
+  .visual-pivot .pivot-eyebrow {
+    font-size: 9px;
+  }
+
+  .visual-pivot .pivot-metrics {
+    padding: 6px 12px 9px;
+    gap: 6px;
+  }
+}
