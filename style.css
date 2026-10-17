@@ -1535,3 +1535,24 @@ button { font-family: inherit; outline: none; border: none; cursor: pointer; }
     gap: 6px;
   }
 }
+
+
+
+/* MOBILE BACKGROUND FIX — hero + contact only */
+@media (max-width: 600px) {
+  /* Hero: keep the mountain background attractive behind the content */
+  .hero {
+    background-size: auto 100%;
+    background-position: 55% center;
+    background-repeat: no-repeat;
+    background-color: #dcecff;
+  }
+
+  /* Contact: show more of the sunset image on narrow screens */
+  .contact {
+    background-size: auto 100% !important;
+    background-position: 62% center !important;
+    background-repeat: no-repeat !important;
+    background-color: #f7dfbf;
+  }
+}
